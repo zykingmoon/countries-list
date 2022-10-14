@@ -26,46 +26,44 @@ export default function CountryPage() {
             countries.map((country: CountryItem) => 
               <Grid item sm={12} lg={3} key={country.numericCode}>
                 <Card sx={{ maxWidth: 345 }}>
-                  {/* <Link to={`/details/${country.numericCode}`}> */}
-                    <CardActionArea component={Link} to={`/details/${country.numericCode}`}>
-                        <CardMedia
-                            component="img"
-                            height="160"
-                            image={country.flag}
-                            alt={country.common}
-                        />
-                        <CardContent 
-                          sx={{
-                            px: 3, 
-                            py: 4, 
-                            '& p.MuiTypography-body2': {pb: 1, color: "text.primary"}, 
-                            '& span.MuiTypography-body2': {pl: 1, color: "text.secondary"}
-                          }}
-                        >
-                            <Typography gutterBottom variant="h5" component="div" sx={{pb: 3}}>
-                              {country.common}
+                  <CardActionArea component={Link} to={`/details/${country.numericCode}`}>
+                      <CardMedia
+                          component="img"
+                          height="160"
+                          image={country.flag}
+                          alt={country.common}
+                      />
+                      <CardContent 
+                        sx={{
+                          px: 3, 
+                          py: 4, 
+                          '& p.MuiTypography-body2': {pb: 1, color: "text.primary"}, 
+                          '& span.MuiTypography-body2': {pl: 1, color: "text.secondary"}
+                        }}
+                      >
+                          <Typography gutterBottom variant="h5" component="div" sx={{pb: 3}}>
+                            {country.common}
+                          </Typography>
+                          <Typography variant="body2">
+                            population: 
+                            <Typography component="span">
+                              {country.population}
                             </Typography>
-                            <Typography variant="body2">
-                              population: 
-                              <Typography component="span">
-                                {country.population}
-                              </Typography>
+                          </Typography>
+                          <Typography variant="body2">
+                            region: 
+                            <Typography component="span">
+                              {country.region}
                             </Typography>
-                            <Typography variant="body2">
-                              region: 
-                              <Typography component="span">
-                                {country.region}
-                              </Typography>
+                          </Typography>
+                          <Typography variant="body2">
+                            capital: 
+                            <Typography component="span">
+                              {country.capital}
                             </Typography>
-                            <Typography variant="body2">
-                              capital: 
-                              <Typography component="span">
-                                {country.capital}
-                              </Typography>
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                  {/* </Link> */}
+                          </Typography>
+                      </CardContent>
+                  </CardActionArea>
                 </Card>
               </Grid>
             )

@@ -60,6 +60,7 @@ export const CountryPrivider:FC<Props> = ({children}: Props) => {
   }
   
   useEffect(() => {
+    console.log('CountryPrivider', countriesList)
     if (!countriesList.length){
       setLoading(true);
       fetchCountries();

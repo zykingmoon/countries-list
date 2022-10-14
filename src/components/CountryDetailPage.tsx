@@ -92,7 +92,7 @@ export default function CountryDetail() {
                             component={Link}
                             color="primary"
                             size="large"
-                            href="/home"
+                            href="/"
                             sx={{ boxShadow: 3, width: '142px'}}
                             startIcon={<FontAwesomeIcon icon={faArrowLeft} />}
                         >
@@ -101,7 +101,7 @@ export default function CountryDetail() {
                 </Stack>
             {
             country ? <Grid container spacing={15}>
-                <Grid item sm={5} lg={5} >
+                <Grid item sm={12} lg={5} >
                     <img
                         src={country.flag}
                         alt={country.common}
@@ -109,7 +109,7 @@ export default function CountryDetail() {
                         width="100%"
                     />
                 </Grid>
-                <Grid item sm={7} lg={7}>
+                <Grid item sm={12} lg={7}>
                     <Box 
                         sx={{
                             py: 4, 
@@ -151,7 +151,7 @@ export default function CountryDetail() {
                         </Box>
                         {borders.length > 0 && 
                         <Typography variant="body1" sx={{pt: 4}}>
-                            Border Countries: {borders.map((border) => <Button
+                            Border Countries: {borders.map((border: borderProp) => <Button
                                 component={Link}
                                 color="primary"
                                 size="small"
